@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'us.narin.summarizer'
+version = '1.0-SNAPSHOT'
+
+description = """summarizer-java"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+repositories {
+     maven { url "http://repo.maven.apache.org/maven2" }
+    mavenCentral()
+}
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:3.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    compile group: 'kr.bydelta', name: 'koalanlp-hannanum_2.12', version:'1.5.4', classifier:'assembly'
+    compile group: 'kr.bydelta', name: 'koalanlp-core_2.12', version:'1.5.4'
+    compile group: 'kr.bydelta', name: 'koalanlp-kryo_2.12', version:'1.5.4'
+    compile group: 'net.sf.jung', name: 'jung-api', version:'2.1.1'
+    compile group: 'net.sf.jung', name: 'jung-graph-impl', version:'2.1.1'
+    compile group: 'org.jgrapht', name: 'jgrapht-core', version:'1.0.1'
+    compile group: 'jgraph', name: 'jgraph', version:'5.13.0.0'
+}
